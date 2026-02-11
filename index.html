@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,9 +15,83 @@
         scroll-behavior: smooth;
       }
 
+      /* Speakers */
+      .speakers {
+        background: #ffffff;
+      }
+
+      .speakers-grid {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+      }
+
+      .speaker-card {
+        background: #f8f9fa;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .speaker-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(10, 78, 219, 0.15);
+      }
+
+      .speaker-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .speaker-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .speaker-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #0b1b3a;
+      }
+
+      .speaker-role {
+        font-size: 0.9rem;
+        color: #555;
+        margin: 6px 0 10px;
+      }
+
+      .speaker-links {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .speaker-links a {
+        background: #0a4edb;
+        color: white;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.3s;
+      }
+
+      .speaker-links a:hover {
+        background: #1e7fe6;
+      }
+
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
         line-height: 1.6;
         color: #0b1b3a;
         background: #ffffff;
@@ -667,6 +741,19 @@
       </div>
     </section>
 
+    <section class="speakers" id="speakers">
+      <div class="container">
+        <h2 class="section-title">Meet Our Speakers</h2>
+        <p class="section-content">
+          Meet the voices redefining leadership, growth, and community impact.
+        </p>
+
+        <div class="speakers-grid" id="speakersGrid">
+          <!-- динамически заполняется через JS -->
+        </div>
+      </div>
+    </section>
+
     <!-- Program Highlights -->
     <section class="program" id="program">
       <div class="container">
@@ -778,10 +865,34 @@
           <h3>Connect With Us</h3>
           <p>Stay updated on event news and announcements</p>
           <div class="social-links">
-            <a href="https://www.facebook.com" aria-label="Facebook"><img src="facebook.png" alt="Facebook" style="width: 24px; height: 24px;"></a>
-            <a href="https://x.com/" aria-label="Twitter"><img src="twitter.png" alt="Twitter" style="width: 24px; height: 24px;"></a>
-            <a href="https://www.instagram.com/lokoja_evolve?igsh=MWo0NHloZDhkbjlkMA==" aria-label="Instagram"><img src="image.png" alt="Instagram" style="width: 24px; height: 24px;"></a>
-            <a href="https://www.linkedin.com/company/local-lokoja1/" aria-label="LinkedIn"><img src="linkedln.png" alt="LinkedIn" style="width: 24px; height: 24px;"></a>
+            <a href="https://www.facebook.com" aria-label="Facebook"
+              ><img
+                src="facebook.png"
+                alt="Facebook"
+                style="width: 24px; height: 24px"
+            /></a>
+            <a href="https://x.com/" aria-label="Twitter"
+              ><img
+                src="twitter.png"
+                alt="Twitter"
+                style="width: 24px; height: 24px"
+            /></a>
+            <a
+              href="https://www.instagram.com/lokoja_evolve?igsh=MWo0NHloZDhkbjlkMA=="
+              aria-label="Instagram"
+              ><img
+                src="image.png"
+                alt="Instagram"
+                style="width: 24px; height: 24px"
+            /></a>
+            <a
+              href="https://www.linkedin.com/company/local-lokoja1/"
+              aria-label="LinkedIn"
+              ><img
+                src="linkedln.png"
+                alt="LinkedIn"
+                style="width: 24px; height: 24px"
+            /></a>
           </div>
         </div>
       </div>
@@ -825,6 +936,73 @@
           menuToggle.classList.remove("active");
           navLinks.classList.remove("active");
         }
+      });
+
+      const speakers = [
+        {
+          name: "Honorable Oladele John Nihi",
+          role: "Special Adviser on Youth & Student Matters to the Executive Governor of Kogi State",
+          image: "speakers/lll hon john nihi.jpeg",
+        },
+        {
+          name: "Martins Ujah",
+          role: "Director of Communications<br>Kogi Young Professionals Network",
+          image: "speakers/lll martins ujah.jpeg",
+        },
+        {
+          name: "Victor Omale",
+          role: "Sustainability Advocate",
+          image: "speakers/lll victor omale.jpeg",
+        },
+        {
+          name: "Praise Chioma Nnadozie",
+          role: "Creative Media Professional",
+          image: "speakers/lll praise chioma.jpeg",
+        },
+        {
+          name: "Tosin Samuel",
+          role: "CEO, Tspices Kitchen",
+          image: "speakers/lll tosin samuel.jpeg",
+        },
+        {
+          name: "Dr. Helen O. Edogbanya",
+          role: "Associate Professor, Federal University Lokoja",
+          image: "speakers/lll dr. helen.jpeg",
+        },
+        {
+          name: "Major A. O. Odunsi",
+          role: "Founder, Tech Efiko",
+          image: "speakers/lll major a.o.jpeg",
+        },
+        {
+          name: "Salifu Eyiojotule Daniel",
+          role: "Co-Founder & CEO, AquaProX Africa",
+          image: "speakers/lll salifu daniel.jpeg",
+        },
+        {
+          name: "Tosin Toluwaloju",
+          role: "Journalist and Communications Professional",
+          image: "speakers/lll tosin tolu.jpeg",
+        },
+        {
+          name: "Tijesunimi Afolami",
+          role: "Convener",
+          image: "speakers/lll tj.jpeg",
+        },
+      ];
+
+      const grid = document.getElementById("speakersGrid");
+
+      speakers.forEach((speaker) => {
+        grid.innerHTML += `
+    <div class="speaker-card">
+      <img src="${speaker.image}" class="speaker-image" />
+      <div class="speaker-info">
+        <div class="speaker-name">${speaker.name}</div>
+        <div class="speaker-role">${speaker.role}</div>
+      </div>
+    </div>
+  `;
       });
     </script>
   </body>
